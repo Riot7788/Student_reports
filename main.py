@@ -28,12 +28,10 @@ def main():
 
     report = build_report(args.report, rows)
 
-    table = [
-        [r["student"], r["median_coffee"]]
-        for r in report
-    ]
+    headers = report[0].keys()
+    table = [row.values() for row in report]
 
-    print(tabulate(table, headers=["Student", "Median coffee spent"]))
+    print(tabulate(table, headers=headers, tablefmt="grid"))
 
 
 if __name__ == "__main__":

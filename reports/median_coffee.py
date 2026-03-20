@@ -14,7 +14,6 @@ class MedianCoffeeReport:
         for row in self.rows:
             student = row["student"]
             coffee = float(row["coffee_spent"])
-
             students[student].append(coffee)
 
         result = []
